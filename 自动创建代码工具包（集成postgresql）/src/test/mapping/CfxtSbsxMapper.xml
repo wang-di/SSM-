@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.IDao.CfxtSbsxMapper">
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="test.domain.CfxtSbsx">
+    <id column="c_sbid" jdbcType="VARCHAR" property="cSbid" />
+    <result column="d_sbrq" jdbcType="DATE" property="dSbrq" />
+    <result column="c_sbsy" jdbcType="VARCHAR" property="cSbsy" />
+    <result column="c_sqfydm" jdbcType="VARCHAR" property="cSqfydm" />
+    <result column="c_slfydm" jdbcType="VARCHAR" property="cSlfydm" />
+    <result column="n_clzt" jdbcType="INTEGER" property="nClzt" />
+    <result column="d_clrq" jdbcType="DATE" property="dClrq" />
+    <result column="c_sqid" jdbcType="VARCHAR" property="cSqid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    c_sbid, d_sbrq, c_sbsy, c_sqfydm, c_slfydm, n_clzt, d_clrq, c_sqid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_cfxt_sbsx
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx (c_sbid, d_sbrq, c_sbsy, 
+      c_sqfydm, c_slfydm, n_clzt, 
+      d_clrq, c_sqid)
+    values (#{cSbid,jdbcType=VARCHAR}, #{dSbrq,jdbcType=DATE}, #{cSbsy,jdbcType=VARCHAR}, 
+      #{cSqfydm,jdbcType=VARCHAR}, #{cSlfydm,jdbcType=VARCHAR}, #{nClzt,jdbcType=INTEGER}, 
+      #{dClrq,jdbcType=DATE}, #{cSqid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.CfxtSbsx">
+    insert into t_cfxt_sbsx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        c_sbid,
+      </if>
+      <if test="dSbrq != null">
+        d_sbrq,
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy,
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm,
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm,
+      </if>
+      <if test="nClzt != null">
+        n_clzt,
+      </if>
+      <if test="dClrq != null">
+        d_clrq,
+      </if>
+      <if test="cSqid != null">
+        c_sqid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cSbid != null">
+        #{cSbid,jdbcType=VARCHAR},
+      </if>
+      <if test="dSbrq != null">
+        #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    <set>
+      <if test="dSbrq != null">
+        d_sbrq = #{dSbrq,jdbcType=DATE},
+      </if>
+      <if test="cSbsy != null">
+        c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      </if>
+      <if test="cSqfydm != null">
+        c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="cSlfydm != null">
+        c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      </if>
+      <if test="nClzt != null">
+        n_clzt = #{nClzt,jdbcType=INTEGER},
+      </if>
+      <if test="dClrq != null">
+        d_clrq = #{dClrq,jdbcType=DATE},
+      </if>
+      <if test="cSqid != null">
+        c_sqid = #{cSqid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.domain.CfxtSbsx">
+    update t_cfxt_sbsx
+    set d_sbrq = #{dSbrq,jdbcType=DATE},
+      c_sbsy = #{cSbsy,jdbcType=VARCHAR},
+      c_sqfydm = #{cSqfydm,jdbcType=VARCHAR},
+      c_slfydm = #{cSlfydm,jdbcType=VARCHAR},
+      n_clzt = #{nClzt,jdbcType=INTEGER},
+      d_clrq = #{dClrq,jdbcType=DATE},
+      c_sqid = #{cSqid,jdbcType=VARCHAR}
+    where c_sbid = #{cSbid,jdbcType=VARCHAR}
+  </update>
+</mapper>
